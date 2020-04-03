@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.andot.share.api'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+bootJar {
+    enabled = true
+}
+
+dependencies {
+    implementation project(':share-common')
+    implementation project(':share-service')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'com.github.xiaoymin', name: 'swagger-bootstrap-ui', version: '1.9.6'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.67'
+
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+

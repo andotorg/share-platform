@@ -1,0 +1,6 @@
+rootProject.name = 'share'
+
+include 'share-common'
+include 'share-api'
+include 'share-service'
+
