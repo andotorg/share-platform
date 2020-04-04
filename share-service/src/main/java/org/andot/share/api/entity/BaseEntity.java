@@ -2,11 +2,13 @@ package org.andot.share.api.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
+@Setter
+@Getter
 public class BaseEntity {
     private Boolean disabled;
     @TableField(fill = FieldFill.INSERT)

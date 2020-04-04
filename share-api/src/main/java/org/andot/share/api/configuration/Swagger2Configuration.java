@@ -8,6 +8,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.ApiKey;
+import springfox.documentation.service.Contact;
 import springfox.documentation.service.SecurityScheme;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
@@ -35,12 +36,14 @@ public class Swagger2Configuration {
     }
 
     private ApiInfo apiInfo() {
+        Contact contact = new Contact("lucas", "https://andotorg.github.io/share-platform", "xieyan669@gmail.com");
         return new ApiInfoBuilder()
                 .title("Share-Platform RESTful APIs")
                 .description("Share")
-                .termsOfServiceUrl("http://localhost:9090/")
-                .contact("xieyan669@gmail.com")
+                .termsOfServiceUrl("https://andotorg.gitbook.io/share")
+                .contact(contact)
                 .version("1.0.0")
+                .license("MIT")
                 .build();
     }
 
