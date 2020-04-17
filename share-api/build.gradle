@@ -1,10 +1,5 @@
-plugins {
-    id 'java'
-}
-
 group = 'org.andot.share.api'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
 
 bootJar {
     enabled = true
