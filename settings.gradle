@@ -4,4 +4,5 @@ include 'share-common'
 include 'share-api'
 include 'share-service'
 include 'share-code'
+include 'share-mapper'
 

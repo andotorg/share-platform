@@ -4,6 +4,13 @@ import org.andot.share.api.entity.Role;
 
 import java.util.List;
 
+/**
+ * 角色服务接口
+ * 用于角色创建、修改、删除、查询、分配角色
+ * @author lucas
+ * @date 2020-4-18 11:07:27
+ * @since 1.0
+ */
 public interface RoleService {
     /**
      * 根据角色id获取角色
@@ -18,4 +25,10 @@ public interface RoleService {
      * @return
      */
     List<Role> getRoleList(String roleName);
+
+    boolean saveRole(Role role);
+
+    boolean updateRole(Role role);
+
+    boolean delRoleById(Long id);
 }
