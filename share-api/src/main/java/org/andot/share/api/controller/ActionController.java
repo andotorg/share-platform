@@ -42,11 +42,13 @@ public class ActionController {
         return null;
     }
 
+    @ApiOperation("根据条件获取列表数据")
     @GetMapping("/list")
     public CommonResult getList(ActionDto actionDto) {
         return null;
     }
 
+    @ApiOperation("根据条件获取分页列表数据")
     @PostMapping("/table")
     public CommonPage getPageList(@RequestBody PageDto<ActionDto> actionPage) {
         return null;
