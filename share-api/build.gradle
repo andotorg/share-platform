@@ -14,9 +14,7 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     compile group: 'com.github.xiaoymin', name: 'swagger-bootstrap-ui', version: '1.9.6'
 
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
-
-    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.67'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.1'
 
     testImplementation 'org.springframework.security:spring-security-test'
 }

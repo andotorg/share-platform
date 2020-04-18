@@ -15,7 +15,7 @@ public interface MenuService {
 
     Menu getMenuById(Long roleId);
 
-    List<Menu> getMenuList(String roleName);
+    List<Menu> getMenuList(String menuName, String url);
 
     boolean saveMenu(Menu role);
 

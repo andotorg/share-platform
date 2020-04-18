@@ -1,5 +1,6 @@
 package org.andot.share.api.service;
 
+import org.andot.share.api.dto.RoleDto;
 import org.andot.share.api.entity.Role;
 
 import java.util.List;
@@ -17,18 +18,18 @@ public interface RoleService {
      * @param roleId
      * @return
      */
-    Role getRoleById(Long roleId);
+    RoleDto getRoleById(Long roleId);
 
     /**
      * 根据角色名称查询角色列表
      * @param roleName
      * @return
      */
-    List<Role> getRoleList(String roleName);
+    List<RoleDto> getRoleList(String roleName);
 
-    boolean saveRole(Role role);
+    boolean saveRole(RoleDto role);
 
-    boolean updateRole(Role role);
+    boolean updateRole(RoleDto role);
 
     boolean delRoleById(Long id);
 }

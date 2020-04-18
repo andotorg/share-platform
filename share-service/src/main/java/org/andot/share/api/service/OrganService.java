@@ -1,5 +1,6 @@
 package org.andot.share.api.service;
 
+import org.andot.share.api.dto.OrganDto;
 import org.andot.share.api.entity.Organ;
 
 import java.util.List;
@@ -15,11 +16,13 @@ public interface OrganService {
 
     Organ getOrganById(Long roleId);
 
-    List<Organ> getOrganList(String roleName);
+    List<Organ> getOrganList(String organName);
 
     boolean saveOrgan(Organ role);
 
     boolean updateOrgan(Organ role);
 
     boolean delOrganById(Long id);
+
+    List<OrganDto> getOrganTree(Long organId);
 }

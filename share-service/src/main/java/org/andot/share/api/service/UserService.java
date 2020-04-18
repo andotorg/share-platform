@@ -1,5 +1,6 @@
 package org.andot.share.api.service;
 
+import org.andot.share.api.dto.UserDto;
 import org.andot.share.api.dto.XUserDetail;
 import org.andot.share.api.entity.User;
 import org.andot.share.api.entity.UserDetail;
@@ -12,9 +13,9 @@ public interface UserService {
      */
     UserDetail getUserDetail(Long xNumber);
 
-    User getUser(Long xNumber);
+    UserDto getUser(Long xNumber);
 
-    User getUser(String phone);
+    UserDto getUser(String phone);
 
     XUserDetail login(String number, String password);
 }

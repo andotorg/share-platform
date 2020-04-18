@@ -15,7 +15,7 @@ public interface ActionService {
 
     Action getActionById(Long roleId);
 
-    List<Action> getActionList(String roleName);
+    List<Action> getActionList(String actionName, String actionUrl);
 
     boolean saveAction(Action role);
 

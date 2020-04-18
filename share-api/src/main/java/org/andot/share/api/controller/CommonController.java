@@ -1,9 +1,8 @@
 package org.andot.share.api.controller;
 
 import org.andot.share.api.component.ShareValueComponent;
+import org.andot.share.api.dto.RoleDto;
 import org.andot.share.api.dto.XUserDetail;
-import org.andot.share.api.entity.Role;
-import org.andot.share.api.entity.User;
 import org.andot.share.api.service.UserService;
 import org.andot.share.common.domain.AccessToken;
 import org.andot.share.common.domain.JwtUserDetail;
@@ -43,7 +42,7 @@ public class CommonController {
         AccessToken accessToken = new AccessToken();
         accessToken.setPrefix("Bearer");
         JwtUserDetail jwtUserDetail = new JwtUserDetail();
-        jwtUserDetail.setRoles(userDetail.getRoleList().stream().map(Role::getRoleCode).collect(Collectors.toList()));
+        jwtUserDetail.setRoles(userDetail.getRoleList().stream().map(RoleDto::getRoleCode).collect(Collectors.toList()));
         jwtUserDetail.setUsername(userDetail.getUser().getPhone());
         jwtUserDetail.setXNumber(userDetail.getUsername());
         String token = JwtUtil.productJwtToken(jwtUserDetail, shareValueComponent.getJwtSecret(), shareValueComponent.getJwtExpiration());
