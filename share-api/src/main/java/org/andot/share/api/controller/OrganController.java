@@ -1,6 +1,7 @@
 package org.andot.share.api.controller;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.andot.share.api.dto.ActionDto;
 import org.andot.share.api.dto.OrganDto;
 import org.andot.share.api.dto.PageDto;
@@ -16,31 +17,36 @@ import java.util.List;
  * @date 2019-1-17 16:03:09
  * @since 1.0
  */
-@Api(tags = "组织机构控制器", description = "组织机构控制器")
+@Api(tags = "组织机构API", description = "组织机构控制器")
 @RequestMapping("/organ")
-public class OrganController extends BaseController {
+@RestController
+public class OrganController {
 
     @PostMapping("")
     public CommonResult add(@RequestBody OrganDto organDto){
         return null;
     }
 
-    @Override
+    @ApiOperation("更新数据")
+    @PutMapping("/{id}")
     public CommonResult update(Long id) {
         return null;
     }
 
-    @Override
+    @ApiOperation("删除数据")
+    @GetMapping("/{id}")
     public CommonResult del(Long id) {
         return null;
     }
 
-    @Override
+    @ApiOperation("批量删除数据")
+    @GetMapping("/dels")
     public CommonResult dels(List<Long> ids) {
         return null;
     }
 
-    @Override
+    @ApiOperation("根据id获取数据")
+    @GetMapping("/{id}")
     public CommonResult get(Long id) {
         return null;
     }

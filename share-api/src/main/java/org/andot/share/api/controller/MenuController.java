@@ -1,45 +1,48 @@
 package org.andot.share.api.controller;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.andot.share.api.dto.MenuDto;
 import org.andot.share.api.dto.PageDto;
 import org.andot.share.common.response.CommonPage;
 import org.andot.share.common.response.CommonResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /***
  * @author lucas
  */
-@Api(tags = "菜单控制器", description = "菜单请求控制器")
+@Api(tags = "菜单API", description = "菜单请求控制器")
 @RequestMapping("/menu")
-public class MenuController extends BaseController {
+@RestController
+public class MenuController {
 
     @PostMapping("")
     public CommonResult add(@RequestBody MenuDto menuDto){
         return null;
     }
 
-    @Override
+    @ApiOperation("更新数据")
+    @PutMapping("/{id}")
     public CommonResult update(Long id) {
         return null;
     }
 
-    @Override
+    @ApiOperation("删除数据")
+    @GetMapping("/{id}")
     public CommonResult del(Long id) {
         return null;
     }
 
-    @Override
+    @ApiOperation("批量删除数据")
+    @GetMapping("/dels")
     public CommonResult dels(List<Long> ids) {
         return null;
     }
 
-    @Override
+    @ApiOperation("根据id获取数据")
+    @GetMapping("/{id}")
     public CommonResult get(Long id) {
         return null;
     }

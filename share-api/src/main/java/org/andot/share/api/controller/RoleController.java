@@ -1,7 +1,51 @@
 package org.andot.share.api.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.andot.share.api.dto.ActionDto;
+import org.andot.share.api.dto.PageDto;
+import org.andot.share.common.response.CommonPage;
+import org.andot.share.common.response.CommonResult;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@Api(tags = "角色API", description = "角色API")
+@RequestMapping("/role")
 @RestController
 public class RoleController {
+
+    @ApiOperation("更新数据")
+    @PutMapping("/{id}")
+    public CommonResult update(Long id) {
+        return null;
+    }
+
+    @ApiOperation("删除数据")
+    @GetMapping("/{id}")
+    public CommonResult del(Long id) {
+        return null;
+    }
+
+    @ApiOperation("批量删除数据")
+    @GetMapping("/dels")
+    public CommonResult dels(List<Long> ids) {
+        return null;
+    }
+
+    @ApiOperation("根据id获取数据")
+    @GetMapping("/{id}")
+    public CommonResult get(Long id) {
+        return null;
+    }
+
+    @GetMapping("/list")
+    public CommonResult getList(ActionDto actionDto) {
+        return null;
+    }
+
+    @PostMapping("/table")
+    public CommonPage getPageList(@RequestBody PageDto<ActionDto> actionPage) {
+        return null;
+    }
 }

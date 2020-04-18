@@ -1,6 +1,7 @@
 package org.andot.share.api.controller;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.andot.share.api.dto.ActionDto;
 import org.andot.share.api.dto.PageDto;
 import org.andot.share.common.response.CommonPage;
@@ -12,26 +13,31 @@ import java.util.List;
 /***
  * @author lucas
  */
-@Api(tags = "操作方法控制器", description = "操作方法请求控制器")
+@Api(tags = "操作方法API", description = "操作方法请求控制器")
 @RequestMapping("/action")
-public class ActionController extends BaseController {
+@RestController
+public class ActionController {
 
-    @Override
+    @ApiOperation("更新数据")
+    @PutMapping("/{id}")
     public CommonResult update(Long id) {
         return null;
     }
 
-    @Override
+    @ApiOperation("删除数据")
+    @GetMapping("/{id}")
     public CommonResult del(Long id) {
         return null;
     }
 
-    @Override
+    @ApiOperation("批量删除数据")
+    @GetMapping("/dels")
     public CommonResult dels(List<Long> ids) {
         return null;
     }
 
-    @Override
+    @ApiOperation("根据id获取数据")
+    @GetMapping("/{id}")
     public CommonResult get(Long id) {
         return null;
     }
