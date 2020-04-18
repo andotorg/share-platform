@@ -25,14 +25,14 @@ public class ActionController {
     }
 
     @ApiOperation("删除数据")
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     public CommonResult del(Long id) {
         return null;
     }
 
     @ApiOperation("批量删除数据")
-    @GetMapping("/dels")
-    public CommonResult dels(List<Long> ids) {
+    @DeleteMapping("/dels")
+    public CommonResult dels(@RequestBody List<Long> ids) {
         return null;
     }
 
