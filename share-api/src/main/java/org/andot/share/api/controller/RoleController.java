@@ -2,8 +2,8 @@ package org.andot.share.api.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.andot.share.api.dto.ActionDto;
 import org.andot.share.api.dto.PageDto;
+import org.andot.share.api.dto.RoleDto;
 import org.andot.share.common.response.CommonPage;
 import org.andot.share.common.response.CommonResult;
 import org.springframework.web.bind.annotation.*;
@@ -40,12 +40,12 @@ public class RoleController {
     }
 
     @GetMapping("/list")
-    public CommonResult getList(ActionDto actionDto) {
+    public CommonResult getList(RoleDto roleDto) {
         return null;
     }
 
     @PostMapping("/table")
-    public CommonPage getPageList(@RequestBody PageDto<ActionDto> actionPage) {
+    public CommonPage getPageList(@RequestBody PageDto<RoleDto> rolePage) {
         return null;
     }
 }
