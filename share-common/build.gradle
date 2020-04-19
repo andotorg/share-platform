@@ -1,17 +1,9 @@
-plugins {
-    id 'java'
-}
-
 group 'org.andot.share.common'
 version '0.0.1-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
-repositories {
-    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-    google()
+jar {
+    enabled = true
 }
-
 dependencies {
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 

@@ -1,10 +1,14 @@
 group = 'org.andot.share.api'
 version = '0.0.1-SNAPSHOT'
 
+mainClassName = "org.andot.share.api.ShareApiApplication"
+
 bootJar {
+    enabled = true  // 默认不需要打可执行jar包
+}
+jar {
     enabled = true
 }
-
 dependencies {
     implementation project(':share-common')
     implementation project(':share-service')
@@ -17,5 +21,14 @@ dependencies {
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.1'
 
     testImplementation 'org.springframework.security:spring-security-test'
+}
+
+sourceSets {
+    main {
+        resources {
+            //可以将java目录下的所有非.java资源打包到classes下
+            srcDir 'src/main/java'
+        }
+    }
 }
 

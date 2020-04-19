@@ -1,19 +1,20 @@
-plugins {
-    id 'java'
-}
-
 group 'org.andot'
 version '0.0.1-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+jar {
+    enabled = true
 }
-
 dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.1'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+sourceSets {
+    main {
+        resources {
+            //可以将java目录下的所有非.java资源打包到classes下
+            srcDir 'src/main/java'
+        }
+    }
 }

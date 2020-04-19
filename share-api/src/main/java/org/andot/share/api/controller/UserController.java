@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "用户API", description = "角色API")
-@RequestMapping("/role")
+/**
+ * @author lucas
+ */
+@Api(tags = "用户API", description = "用户API")
+@RequestMapping("/user")
 @RestController
 public class UserController {
 
