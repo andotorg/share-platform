@@ -5,11 +5,12 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Setter
 @Getter
-public class BaseEntity {
+public class BaseEntity implements Serializable {
     private Boolean disabled;
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
@@ -21,4 +22,5 @@ public class BaseEntity {
     @TableField(fill = FieldFill.UPDATE)
     private String updatePerson;
     private String deletePerson;
+    private static final long serialVersionUID = 1L;
 }
