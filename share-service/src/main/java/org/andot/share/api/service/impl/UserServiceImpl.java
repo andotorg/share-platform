@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.andot.share.api.dao.RoleMapper;
 import org.andot.share.api.dao.RoleUserMapper;
-import org.andot.share.api.dao.UserDeatilMapper;
+import org.andot.share.api.dao.UserDetailMapper;
 import org.andot.share.api.dao.UserMapper;
 import org.andot.share.api.dto.RoleDto;
 import org.andot.share.api.dto.UserDto;
@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     private final UserMapper userMapper;
-    private final UserDeatilMapper userDeatilMapper;
+    private final UserDetailMapper userDeatilMapper;
     private final RoleUserMapper roleUserMapper;
     private final RoleMapper roleMapper;
     private final PasswordEncoder bCryptPasswordEncoder;

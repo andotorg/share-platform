@@ -29,13 +29,13 @@ public class OrganController {
 
     @ApiOperation("更新数据")
     @PutMapping("/{id}")
-    public CommonResult update(Long id) {
+    public CommonResult update(@PathVariable("id") Long id) {
         return null;
     }
 
     @ApiOperation("删除数据")
     @DeleteMapping("/{id}")
-    public CommonResult del(Long id) {
+    public CommonResult del(@PathVariable("id") Long id) {
         return null;
     }
 
@@ -47,7 +47,7 @@ public class OrganController {
 
     @ApiOperation("根据id获取数据")
     @GetMapping("/{id}")
-    public CommonResult get(Long id) {
+    public CommonResult get(@PathVariable("id") Long id) {
         return null;
     }
 

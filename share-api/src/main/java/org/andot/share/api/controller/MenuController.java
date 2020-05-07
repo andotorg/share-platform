@@ -4,10 +4,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.andot.share.api.dto.MenuDto;
 import org.andot.share.api.dto.PageDto;
+import org.andot.share.api.service.MenuService;
 import org.andot.share.common.response.CommonPage;
 import org.andot.share.common.response.CommonResult;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /***
@@ -18,20 +21,24 @@ import java.util.List;
 @RestController
 public class MenuController {
 
+    @Resource
+    private MenuService menuService;
+
     @PostMapping("")
     public CommonResult add(@RequestBody MenuDto menuDto){
+        menuService.saveMenu(menuDto);
         return null;
     }
 
     @ApiOperation("更新数据")
     @PutMapping("/{id}")
-    public CommonResult update(Long id) {
+    public CommonResult update(@PathVariable("id") Long id) {
         return null;
     }
 
     @ApiOperation("删除数据")
     @DeleteMapping("/{id}")
-    public CommonResult del(Long id) {
+    public CommonResult del(@PathVariable("id") Long id) {
         return null;
     }
 
@@ -43,7 +50,7 @@ public class MenuController {
 
     @ApiOperation("根据id获取数据")
     @GetMapping("/{id}")
-    public CommonResult get(Long id) {
+    public CommonResult get(@PathVariable("id") Long id) {
         return null;
     }
 
