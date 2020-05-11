@@ -156,10 +156,10 @@ CREATE TABLE `groups` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for menu
+-- Table structure for anMenu
 -- ----------------------------
-DROP TABLE IF EXISTS `menu`;
-CREATE TABLE `menu` (
+DROP TABLE IF EXISTS `anMenu`;
+CREATE TABLE `anMenu` (
   `menu_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `menu_name` varchar(128) DEFAULT NULL COMMENT '菜单名称',
   `menu_url` varchar(512) DEFAULT NULL COMMENT '菜单地址',
@@ -180,7 +180,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='菜单表\r\n';
 
 -- ----------------------------
--- Records of menu
+-- Records of anMenu
 -- ----------------------------
 
 -- ----------------------------

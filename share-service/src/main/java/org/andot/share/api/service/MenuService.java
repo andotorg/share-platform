@@ -1,7 +1,7 @@
 package org.andot.share.api.service;
 
 import org.andot.share.api.dto.MenuDto;
-import org.andot.share.api.entity.Menu;
+import org.andot.share.api.entity.AnMenu;
 
 import java.util.List;
 
@@ -14,13 +14,15 @@ import java.util.List;
  */
 public interface MenuService {
 
-    Menu getMenuById(Long roleId);
+    MenuDto getMenuInfoById(Long menuId);
 
-    List<Menu> getMenuList(String menuName, String url);
+    List<AnMenu> getMenuList(String menuName, String url);
 
     boolean saveMenu(MenuDto menuDto);
 
-    boolean updateMenu(MenuDto menuDto);
+    boolean updateMenu(Long id, MenuDto menuDto);
 
     boolean delMenuById(Long id);
+
+    boolean delBatchMenuById(List<Long> id);
 }

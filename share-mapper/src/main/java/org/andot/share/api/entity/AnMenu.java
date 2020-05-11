@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class Menu implements Serializable {
+public class AnMenu {
     private Long menuId;
     private String menuName;
     private String menuUrl;
@@ -14,5 +14,4 @@ public class Menu implements Serializable {
     private String menuIcon;
     private String appSystemId;
     private String orderCode;
-    private static final long serialVersionUID = 1L;
 }
