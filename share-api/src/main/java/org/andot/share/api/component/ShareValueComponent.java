@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author Andot
  */
-@Component
+@Component("shareValueComponent")
 public class ShareValueComponent {
     @Value("${share.info}")
     private String info;

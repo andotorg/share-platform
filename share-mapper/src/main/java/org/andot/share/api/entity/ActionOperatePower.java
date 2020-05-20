@@ -1,12 +1,12 @@
 package org.andot.share.api.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
-import java.io.Serializable;
 
 @Data
 @ToString
+@EqualsAndHashCode(callSuper=false)
 public class ActionOperatePower extends BaseEntity {
     private Integer actionPowerId;
     private Integer actionId;

@@ -1,6 +1,6 @@
 package org.andot.share.api.component.utils;
 
-import org.andot.share.api.dto.XUserDetail;
+import org.andot.share.api.domain.XUserDetail;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 

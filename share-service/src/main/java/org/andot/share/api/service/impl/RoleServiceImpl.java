@@ -2,7 +2,7 @@ package org.andot.share.api.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.andot.share.api.dao.RoleMapper;
-import org.andot.share.api.dto.RoleDto;
+import org.andot.share.api.domain.RoleDto;
 import org.andot.share.api.entity.Role;
 import org.andot.share.api.service.RoleService;
 import org.springframework.beans.BeanUtils;

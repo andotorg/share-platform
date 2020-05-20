@@ -1,4 +1,4 @@
-package org.andot.share.api.component.exception.handler;
+package org.andot.share.api.component.handler;
 
 import org.andot.share.common.response.CommonResult;
 import org.springframework.http.HttpStatus;

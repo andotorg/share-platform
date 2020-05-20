@@ -2,8 +2,8 @@ package org.andot.share.api.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.andot.share.api.dto.PageDto;
-import org.andot.share.api.dto.RoleDto;
+import org.andot.share.api.domain.PageDto;
+import org.andot.share.api.domain.RoleDto;
 import org.andot.share.common.response.CommonPage;
 import org.andot.share.common.response.CommonResult;
 import org.springframework.web.bind.annotation.*;

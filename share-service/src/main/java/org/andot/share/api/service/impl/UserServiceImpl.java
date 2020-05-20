@@ -7,16 +7,15 @@ import org.andot.share.api.dao.RoleMapper;
 import org.andot.share.api.dao.RoleUserMapper;
 import org.andot.share.api.dao.UserDetailMapper;
 import org.andot.share.api.dao.UserMapper;
-import org.andot.share.api.dto.RoleDto;
-import org.andot.share.api.dto.UserDto;
+import org.andot.share.api.domain.RoleDto;
+import org.andot.share.api.domain.UserDto;
 import org.andot.share.api.entity.Role;
 import org.andot.share.api.entity.RoleUser;
 import org.andot.share.api.entity.User;
 import org.andot.share.api.entity.UserDetail;
-import org.andot.share.api.dto.XUserDetail;
+import org.andot.share.api.domain.XUserDetail;
 import org.andot.share.api.service.UserService;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -41,7 +40,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String xNumber) {
         try {
-            UserDto user = this.getUser(xNumber);
+            UserDto user;
+            if(xNumber.length() == 11){
+                user = this.getUser(xNumber);
+            }else{
+                user = this.getUser(Long.parseLong(xNumber));
+            }
             List<RoleUser> roleUserList = roleUserMapper.selectList(new LambdaQueryWrapper<RoleUser>().eq(RoleUser::getXNumber, xNumber));
             List<Long> roleIds = roleUserList.stream().map(RoleUser::getRoleId).collect(Collectors.toList());
             List<RoleDto> roles = roleMapper.selectBatchIds(roleIds).stream().map(item-> RoleDto.builder()

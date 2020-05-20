@@ -2,14 +2,12 @@ package org.andot.share.api.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
-@Setter
-@Getter
+@Data
 public class BaseEntity implements Serializable {
     private Boolean disabled;
     @TableField(fill = FieldFill.INSERT)

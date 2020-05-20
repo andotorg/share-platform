@@ -1,6 +1,6 @@
 package org.andot.share.api.service.impl;
 
-import org.andot.share.api.dto.OrganDto;
+import org.andot.share.api.domain.OrganDto;
 import org.andot.share.api.entity.Organ;
 import org.andot.share.api.service.OrganService;
 import org.springframework.stereotype.Service;

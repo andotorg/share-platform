@@ -1,7 +1,6 @@
 package org.andot.share.api.service;
 
-import org.andot.share.api.dto.RoleDto;
-import org.andot.share.api.entity.Role;
+import org.andot.share.api.domain.RoleDto;
 
 import java.util.List;
 

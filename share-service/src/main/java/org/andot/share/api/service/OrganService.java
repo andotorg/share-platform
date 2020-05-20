@@ -1,6 +1,6 @@
 package org.andot.share.api.service;
 
-import org.andot.share.api.dto.OrganDto;
+import org.andot.share.api.domain.OrganDto;
 import org.andot.share.api.entity.Organ;
 
 import java.util.List;

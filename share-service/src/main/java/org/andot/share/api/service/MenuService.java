@@ -1,7 +1,6 @@
 package org.andot.share.api.service;
 
-import org.andot.share.api.dto.MenuDto;
-import org.andot.share.api.entity.AnMenu;
+import org.andot.share.api.domain.MenuDto;
 
 import java.util.List;
 
@@ -16,7 +15,7 @@ public interface MenuService {
 
     MenuDto getMenuInfoById(Long menuId);
 
-    List<AnMenu> getMenuList(String menuName, String url);
+    List<MenuDto> getMenuList(String menuName, String url);
 
     boolean saveMenu(MenuDto menuDto);
 

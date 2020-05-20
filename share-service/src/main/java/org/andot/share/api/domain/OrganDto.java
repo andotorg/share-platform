@@ -1,4 +1,4 @@
-package org.andot.share.api.dto;
+package org.andot.share.api.domain;
 
 import lombok.Getter;
 import lombok.Setter;

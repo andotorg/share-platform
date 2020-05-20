@@ -1,4 +1,4 @@
-package org.andot.share.api.dto;
+package org.andot.share.api.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

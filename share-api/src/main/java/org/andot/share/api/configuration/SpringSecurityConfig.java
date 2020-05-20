@@ -1,9 +1,9 @@
 package org.andot.share.api.configuration;
 
 import org.andot.share.api.component.UserAccessDecisionManager;
-import org.andot.share.api.component.exception.handler.UserAccessDeniedHandler;
-import org.andot.share.api.component.exception.handler.UserLogoutSuccessHandler;
-import org.andot.share.api.component.exception.handler.UserUnAuthenticationHandler;
+import org.andot.share.api.component.handler.UserAccessDeniedHandler;
+import org.andot.share.api.component.handler.UserLogoutSuccessHandler;
+import org.andot.share.api.component.handler.UserUnAuthenticationHandler;
 import org.andot.share.api.component.filter.CORSSecurityFilter;
 import org.andot.share.api.component.filter.JwtAuthenticationFilter;
 import org.andot.share.api.service.impl.UserServiceImpl;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

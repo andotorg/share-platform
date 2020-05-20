@@ -3,7 +3,7 @@ package org.andot.share.api.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.AllArgsConstructor;
 import org.andot.share.api.dao.MenuMapper;
-import org.andot.share.api.dto.MenuDto;
+import org.andot.share.api.domain.MenuDto;
 import org.andot.share.api.entity.AnMenu;
 import org.andot.share.api.service.MenuService;
 import org.springframework.beans.BeanUtils;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service("menuService")
@@ -20,8 +21,15 @@ public class MenuServiceImpl implements MenuService {
 
 
     @Override
-    public List<AnMenu> getMenuList(String menuName, String url) {
-        return menuMapper.selectList(new LambdaQueryWrapper<AnMenu>().like(AnMenu::getMenuName, menuName).or().like(AnMenu::getMenuUrl, url));
+    public List<MenuDto> getMenuList(String menuName, String url) {
+        List<AnMenu> anMenuList = menuMapper.selectList(new LambdaQueryWrapper<AnMenu>()
+                .like(AnMenu::getMenuName, menuName).or().like(AnMenu::getMenuUrl, url));
+        List<MenuDto> menuDtoList = anMenuList.stream().map(anMenu->{
+          MenuDto menuDto = new MenuDto();
+          BeanUtils.copyProperties(anMenu, menuDto);
+          return menuDto;
+        }).collect(Collectors.toList());
+        return menuDtoList;
     }
 
     @Transactional
@@ -29,6 +37,7 @@ public class MenuServiceImpl implements MenuService {
     public boolean saveMenu(MenuDto menuDto) {
         AnMenu anMenu = new AnMenu();
         BeanUtils.copyProperties(menuDto, anMenu);
+
         return menuMapper.insert(anMenu)>0;
     }
 

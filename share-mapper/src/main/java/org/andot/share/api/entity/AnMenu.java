@@ -1,11 +1,11 @@
 package org.andot.share.api.entity;
 
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class AnMenu {
+@EqualsAndHashCode(callSuper=false)
+public class AnMenu extends BaseEntity {
     private Long menuId;
     private String menuName;
     private String menuUrl;

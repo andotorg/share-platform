@@ -1,7 +1,5 @@
-package org.andot.share.api.dto;
+package org.andot.share.api.domain;
 
-import org.andot.share.api.entity.Role;
-import org.andot.share.api.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

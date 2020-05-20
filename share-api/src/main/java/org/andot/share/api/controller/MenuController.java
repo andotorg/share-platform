@@ -3,8 +3,8 @@ package org.andot.share.api.controller;
 import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.andot.share.api.dto.MenuDto;
-import org.andot.share.api.dto.PageDto;
+import org.andot.share.api.domain.MenuDto;
+import org.andot.share.api.domain.PageDto;
 import org.andot.share.api.service.MenuService;
 import org.andot.share.common.response.CommonPage;
 import org.andot.share.common.response.CommonResult;
@@ -26,8 +26,11 @@ public class MenuController {
 
     @PostMapping("")
     public CommonResult add(@RequestBody MenuDto menuDto){
-        menuService.saveMenu(menuDto);
-        return null;
+        if(menuService.saveMenu(menuDto)){
+            return CommonResult.success("保存成功");
+        }else{
+            return CommonResult.failed("保存失败，请重试！");
+        }
     }
 
     @ApiOperation("更新数据")
