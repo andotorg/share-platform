@@ -22,8 +22,18 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public List<MenuDto> getMenuList(String menuName, String url) {
-        List<AnMenu> anMenuList = menuMapper.selectList(new LambdaQueryWrapper<AnMenu>()
-                .like(AnMenu::getMenuName, menuName).or().like(AnMenu::getMenuUrl, url));
+        LambdaQueryWrapper<AnMenu> lambdaQueryWrapper = new LambdaQueryWrapper<AnMenu>();
+        if(menuName != null && url != null){
+            lambdaQueryWrapper.like(AnMenu::getMenuName, menuName).or().like(AnMenu::getMenuUrl, url);
+        }else{
+            if(menuName != null){
+                lambdaQueryWrapper.like(AnMenu::getMenuName, menuName);
+            }else if (url != null){
+                lambdaQueryWrapper.like(AnMenu::getMenuUrl, url);
+            }
+        }
+
+        List<AnMenu> anMenuList = menuMapper.selectList(lambdaQueryWrapper);
         List<MenuDto> menuDtoList = anMenuList.stream().map(anMenu->{
           MenuDto menuDto = new MenuDto();
           BeanUtils.copyProperties(anMenu, menuDto);
